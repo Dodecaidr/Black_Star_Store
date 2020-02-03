@@ -46,11 +46,6 @@
                                     <segue destination="A1E-UO-4w3" kind="show" id="hZ5-uf-BBd"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FxJ-5D-JQ6" customClass="BusketView" customModule="Project_SkillBox_Black_Star" customModuleProvider="target">
-                                <rect key="frame" x="62" y="219" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -102,7 +97,15 @@
                             <outlet property="delegate" destination="A1E-UO-4w3" id="tDY-qI-Jmy"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Vby-5B-R4h"/>
+                    <navigationItem key="navigationItem" id="Vby-5B-R4h">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="sDZ-qp-IoH">
+                            <view key="customView" contentMode="scaleToFill" misplaced="YES" id="9ye-2J-J6F" customClass="BusketView" customModule="Project_SkillBox_Black_Star" customModuleProvider="target">
+                                <rect key="frame" x="326" y="5.5" width="55" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bdj-sp-yrx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -172,7 +175,15 @@
                             <outlet property="delegate" destination="8GA-J1-I9m" id="HKc-Lz-2b4"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="hGJ-IL-6bN"/>
+                    <navigationItem key="navigationItem" id="hGJ-IL-6bN">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="mzo-ul-NzU">
+                            <view key="customView" contentMode="scaleToFill" misplaced="YES" id="PGl-iP-oPT">
+                                <rect key="frame" x="276" y="5.5" width="55" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                        </barButtonItem>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wjv-ks-xlZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -186,10 +197,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="naJ-Jd-zcb">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="277"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="4kp-Ng-zry">
                                 <rect key="frame" x="168" y="219" width="39" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -231,16 +238,23 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MVr-Sf-4do" customClass="BusketView" customModule="Project_SkillBox_Black_Star" customModuleProvider="target">
-                                <rect key="frame" x="325" y="44" width="50" height="50"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="naJ-Jd-zcb">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="277"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            </view>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <viewLayoutGuide key="safeArea" id="aP0-j6-JVu"/>
                     </view>
-                    <navigationItem key="navigationItem" id="MeZ-5r-AoH"/>
+                    <navigationItem key="navigationItem" id="MeZ-5r-AoH">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="fL2-1D-0gI">
+                            <view key="customView" contentMode="scaleToFill" misplaced="YES" id="MVr-Sf-4do" customClass="BusketView" customModule="Project_SkillBox_Black_Star" customModuleProvider="target">
+                                <rect key="frame" x="309" y="0.0" width="50" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bCc-x5-9jp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

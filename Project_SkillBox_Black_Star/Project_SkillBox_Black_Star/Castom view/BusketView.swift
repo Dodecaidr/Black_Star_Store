@@ -10,50 +10,39 @@ import UIKit
 
 class BusketView: UIView {
     
-    @IBOutlet weak var BusketImage: UIImageView!
-    @IBOutlet weak var ButtonPrice: UIButton!
+    @IBOutlet weak var busketImage: UIImageView!
+    @IBOutlet weak var buttonPrice: UIButton!
     
     var quantity: String {
         get {
-            return ButtonPrice.titleLabel?.text! ?? ""
+            return buttonPrice.titleLabel?.text! ?? ""
         }
         set(quantityText) {
-            ButtonPrice.titleLabel?.text = quantityText
+            buttonPrice.titleLabel?.text = quantityText
         }
     }
     
-    var view: UIView!
+    var contentView: UIView?
     var nibName: String = "BusketView"
     
-    override init(frame: CGRect) {
-        super.init(frame:frame)
-        setup()
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        xibSetup()
     }
     
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        setup()
-    }
-    
-    func loadFromNib () -> UIView {
-        let bundle = Bundle(for: type(of: self))
-        let nib = UINib(nibName: nibName, bundle: bundle)
-        let view =  nib.instantiate(withOwner: self, options: nil).first as! UIView
-        
-//        let picker = Bundle.main.loadNibNamed(nibName, owner: nil, options: nil)
-        // https://www.youtube.com/watch?v=9Xvsik6BvKA
-//        let view = picker![0] as! UIView
-        
-        return view
-    }
-    
-    func setup () {
-        view = loadFromNib()
+    func xibSetup() {
+        guard let view = loadViewFromNib() else {
+            return
+        }
         view.frame = bounds
-        view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-        
+        view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         addSubview(view)
+        contentView = view
     }
     
+    private func loadViewFromNib() -> UIView? {
+        let nibView = UINib(nibName: nibName, bundle: nil)
+        return nibView.instantiate(withOwner: self, options: nil).first as? UIView
+    }
     
 }
