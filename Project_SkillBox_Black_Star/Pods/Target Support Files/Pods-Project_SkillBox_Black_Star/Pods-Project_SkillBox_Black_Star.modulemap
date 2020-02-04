@@ -1,0 +1,6 @@
+framework module Pods_Project_SkillBox_Black_Star {
+  umbrella header "Pods-Project_SkillBox_Black_Star-umbrella.h"
+
+  export *
+  module * { export * }
+}
