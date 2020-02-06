@@ -56,17 +56,17 @@
             </objects>
             <point key="canvasLocation" x="1071.2" y="138.98050974512745"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Category Table View Controller-->
         <scene sceneID="y5B-2J-Q6K">
             <objects>
-                <tableViewController id="A1E-UO-4w3" sceneMemberID="viewController">
+                <tableViewController id="A1E-UO-4w3" customClass="CategoryTableViewController" customModule="Project_SkillBox_Black_Star" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="5Zk-yJ-zE9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="64" id="U07-NY-nKx">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CategoryCell" rowHeight="64" id="U07-NY-nKx" customClass="CategoryTableViewCell" customModule="Project_SkillBox_Black_Star" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="64"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="U07-NY-nKx" id="ZP4-LL-BWt">
@@ -88,7 +88,8 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
-                                    <segue destination="8GA-J1-I9m" kind="show" id="Wv1-RS-HCc"/>
+                                    <outlet property="imageCategoryIV" destination="2w4-km-OhZ" id="1JB-ho-qaT"/>
+                                    <outlet property="nameCategoryLabel" destination="zhk-wg-gPd" id="eMI-zK-ou3"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -100,7 +101,7 @@
                     <navigationItem key="navigationItem" id="Vby-5B-R4h">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="sDZ-qp-IoH">
                             <view key="customView" contentMode="scaleToFill" misplaced="YES" id="9ye-2J-J6F" customClass="BusketView" customModule="Project_SkillBox_Black_Star" customModuleProvider="target">
-                                <rect key="frame" x="326" y="5.5" width="55" height="55"/>
+                                <rect key="frame" x="304" y="0.0" width="55" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
@@ -178,7 +179,7 @@
                     <navigationItem key="navigationItem" id="hGJ-IL-6bN">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="mzo-ul-NzU">
                             <view key="customView" contentMode="scaleToFill" misplaced="YES" id="PGl-iP-oPT">
-                                <rect key="frame" x="276" y="5.5" width="55" height="55"/>
+                                <rect key="frame" x="304" y="0.0" width="55" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
@@ -194,7 +195,7 @@
             <objects>
                 <viewController id="pSF-hE-bSk" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U7X-Zp-u3g">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="4kp-Ng-zry">
@@ -248,7 +249,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="MeZ-5r-AoH">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="fL2-1D-0gI">
-                            <view key="customView" contentMode="scaleToFill" misplaced="YES" id="MVr-Sf-4do" customClass="BusketView" customModule="Project_SkillBox_Black_Star" customModuleProvider="target">
+                            <view key="customView" contentMode="scaleToFill" id="MVr-Sf-4do" customClass="BusketView" customModule="Project_SkillBox_Black_Star" customModuleProvider="target">
                                 <rect key="frame" x="309" y="0.0" width="50" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
