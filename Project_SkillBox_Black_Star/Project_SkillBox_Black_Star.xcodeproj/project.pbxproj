@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2134CA7B23EAC91E008BAB6A /* StructJSonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2134CA7A23EAC91E008BAB6A /* StructJSonData.swift */; };
 		2733B03B2060C14ECC74EF00 /* Pods_Project_SkillBox_Black_Star.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A53D5F05BFC39EE7EA94C67 /* Pods_Project_SkillBox_Black_Star.framework */; };
 		420B7B4F23EA0B2C0082074D /* JSONRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420B7B4E23EA0B2C0082074D /* JSONRequest.swift */; };
 		4244C8FB23E7111A00E48E8D /* BusketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4244C8FA23E7111A00E48E8D /* BusketView.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2134CA7A23EAC91E008BAB6A /* StructJSonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructJSonData.swift; sourceTree = "<group>"; };
 		2F6F21D9156733111D1009C6 /* Pods-Project_SkillBox_Black_Star.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project_SkillBox_Black_Star.debug.xcconfig"; path = "Target Support Files/Pods-Project_SkillBox_Black_Star/Pods-Project_SkillBox_Black_Star.debug.xcconfig"; sourceTree = "<group>"; };
 		420B7B4E23EA0B2C0082074D /* JSONRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONRequest.swift; sourceTree = "<group>"; };
 		4244C8FA23E7111A00E48E8D /* BusketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusketView.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				420B7B4E23EA0B2C0082074D /* JSONRequest.swift */,
+				2134CA7A23EAC91E008BAB6A /* StructJSonData.swift */,
 			);
 			path = Json;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 				42FB705223E354E8000A1625 /* AppDelegate.swift in Sources */,
 				42FB706923E365DB000A1625 /* StartViewController.swift in Sources */,
 				42FB705423E354E8000A1625 /* SceneDelegate.swift in Sources */,
+				2134CA7B23EAC91E008BAB6A /* StructJSonData.swift in Sources */,
 				42FB705C23E354E8000A1625 /* Project_SkillBox_Black_Star.xcdatamodeld in Sources */,
 				420B7B4F23EA0B2C0082074D /* JSONRequest.swift in Sources */,
 			);
