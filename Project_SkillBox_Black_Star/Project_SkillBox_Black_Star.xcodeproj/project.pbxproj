@@ -14,6 +14,8 @@
 		4244C8FE23E7114C00E48E8D /* BusketView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4244C8FD23E7114C00E48E8D /* BusketView.xib */; };
 		425A164B23ECA24C00C0C6EF /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425A164A23ECA24C00C0C6EF /* CategoryTableViewController.swift */; };
 		425A164D23ECA79500C0C6EF /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425A164C23ECA79500C0C6EF /* CategoryTableViewCell.swift */; };
+		4265349723F02A7A003D0E22 /* SubCategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4265349623F02A7A003D0E22 /* SubCategoryTableViewController.swift */; };
+		4265349923F035EA003D0E22 /* SubCategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4265349823F035EA003D0E22 /* SubCategoryTableViewCell.swift */; };
 		42FB705223E354E8000A1625 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FB705123E354E8000A1625 /* AppDelegate.swift */; };
 		42FB705423E354E8000A1625 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FB705323E354E8000A1625 /* SceneDelegate.swift */; };
 		42FB705923E354E8000A1625 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42FB705723E354E8000A1625 /* Main.storyboard */; };
@@ -31,6 +33,8 @@
 		4244C8FD23E7114C00E48E8D /* BusketView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BusketView.xib; sourceTree = "<group>"; };
 		425A164A23ECA24C00C0C6EF /* CategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
 		425A164C23ECA79500C0C6EF /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
+		4265349623F02A7A003D0E22 /* SubCategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCategoryTableViewController.swift; sourceTree = "<group>"; };
+		4265349823F035EA003D0E22 /* SubCategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCategoryTableViewCell.swift; sourceTree = "<group>"; };
 		42FB704E23E354E8000A1625 /* Project_SkillBox_Black_Star.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project_SkillBox_Black_Star.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42FB705123E354E8000A1625 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42FB705323E354E8000A1625 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +108,8 @@
 		425A164923ECA20E00C0C6EF /* SubCategory */ = {
 			isa = PBXGroup;
 			children = (
+				4265349623F02A7A003D0E22 /* SubCategoryTableViewController.swift */,
+				4265349823F035EA003D0E22 /* SubCategoryTableViewCell.swift */,
 			);
 			path = SubCategory;
 			sourceTree = "<group>";
@@ -260,11 +266,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4265349723F02A7A003D0E22 /* SubCategoryTableViewController.swift in Sources */,
 				4244C8FB23E7111A00E48E8D /* BusketView.swift in Sources */,
 				42FB705223E354E8000A1625 /* AppDelegate.swift in Sources */,
 				42FB706923E365DB000A1625 /* StartViewController.swift in Sources */,
 				425A164B23ECA24C00C0C6EF /* CategoryTableViewController.swift in Sources */,
 				42FB705423E354E8000A1625 /* SceneDelegate.swift in Sources */,
+				4265349923F035EA003D0E22 /* SubCategoryTableViewCell.swift in Sources */,
 				2134CA7B23EAC91E008BAB6A /* StructJSonData.swift in Sources */,
 				42FB705C23E354E8000A1625 /* Project_SkillBox_Black_Star.xcdatamodeld in Sources */,
 				420B7B4F23EA0B2C0082074D /* JSONRequest.swift in Sources */,
