@@ -12,9 +12,8 @@ import SDWebImage
 
 class CategoryTableViewController: UITableViewController {
 
-    
-    var categorys: [Category] = []
-    var image:UIImageView = UIImageView(image: UIImage(contentsOfFile: "Test_Image"))
+    var categories: [ItemCategory] = []
+    var image: UIImageView = UIImageView(image: UIImage(contentsOfFile: "Test_Image"))
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +23,7 @@ class CategoryTableViewController: UITableViewController {
         super.viewWillDisappear(animated)
 
         JsonRequest().loadCategory { list in
-            self.categorys = list
+            self.categories = list
             self.tableView.reloadData()
 
         }
@@ -34,8 +33,11 @@ class CategoryTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard categorys.count != 0 else {return 1}
-        return categorys.count
+        guard
+            categories.count != 0 else {
+            return 1
+        }
+        return categories.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -43,15 +45,14 @@ class CategoryTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath) as! CategoryTableViewCell
         
         
-        if categorys.count == 0 {
+        if categories.isEmpty {
             cell.imageCategoryIV.image = UIImage(contentsOfFile: "Test_Image")
             cell.nameCategoryLabel.text = "23231"
-        } else {
-        
-        
-        let category = categorys[indexPath.row]
-        cell.nameCategoryLabel.text = category.name
-            cell.imageCategoryIV?.sd_setImage(with: URL(string:"https://blackstarwear.ru/\(category.image)"), completed: nil )
+        }
+        else {
+        let category = categories[indexPath.row]
+        cell.nameCategoryLabel.text = category.name ?? ""
+            cell.imageCategoryIV?.sd_setImage(with: URL(string:"https://blackstarwear.ru/\(category.iconImage ?? "")"), completed: nil )
             
         }
         return cell
