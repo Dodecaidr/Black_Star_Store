@@ -24,7 +24,9 @@ class CategoryTableViewController: UITableViewController {
 
         JsonRequest().loadCategory { list in
             self.categories = list
+            DispatchQueue.main.async {
             self.tableView.reloadData()
+            }
 
         }
     }
@@ -52,21 +54,19 @@ class CategoryTableViewController: UITableViewController {
         else {
         let category = categories[indexPath.row]
         cell.nameCategoryLabel.text = category.name ?? ""
-            cell.imageCategoryIV?.sd_setImage(with: URL(string:"https://blackstarwear.ru/\(category.iconImage ?? "")"), completed: nil )
+            cell.imageCategoryIV?.sd_setImage(with: URL(string:"https://blackstarwear.ru/\(category.iconImage ?? "image/catalog/im2017/3.png")"), completed: nil )
             
         }
         return cell
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "CategorySub" {
-//            guard let indexPath = tableView.indexPathForSelectedRow else {return}
-//            if let subCategories = segue.destination as? SubCategoryTableViewController {
-//                
-//                let subCategory = categorys[indexPath.row]
-//                subCategories.subCategories = subCategory
-//                
-//            }
-//        }
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "CategorySub" {
+            guard let indexPath = tableView.indexPathForSelectedRow else { return }
+            if let newTaskVC = segue.destination as? SubCategoryTableViewController {
+                let subCategory = categories[indexPath.row]
+                newTaskVC.subCategories = subCategory
+            }
+        }
+    }
 }

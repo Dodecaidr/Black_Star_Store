@@ -404,33 +404,32 @@
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Test_Image" translatesAutoresizingMaskIntoConstraints="NO" id="VqU-JT-dOV">
                                             <rect key="frame" x="10" y="11" width="72" height="73"/>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="73" id="J47-In-4Yj"/>
                                                 <constraint firstAttribute="width" constant="72" id="a7o-Eq-RZN"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SubCategory" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v6U-5h-bK7">
-                                            <rect key="frame" x="85" y="22" width="265" height="51"/>
+                                            <rect key="frame" x="92" y="22" width="257" height="51"/>
                                             <fontDescription key="fontDescription" name="SnellRoundhand-Bold" family="Snell Roundhand" pointSize="28"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottomMargin" secondItem="v6U-5h-bK7" secondAttribute="bottom" constant="11" id="0E4-Kd-GWn"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="v6U-5h-bK7" secondAttribute="trailing" constant="9" id="0II-xq-Lx0"/>
-                                        <constraint firstItem="VqU-JT-dOV" firstAttribute="top" secondItem="8IA-XA-SoE" secondAttribute="top" constant="11" id="7m4-7j-1wh"/>
-                                        <constraint firstItem="v6U-5h-bK7" firstAttribute="top" secondItem="8IA-XA-SoE" secondAttribute="topMargin" constant="11" id="Fxa-3h-Kc5"/>
-                                        <constraint firstItem="VqU-JT-dOV" firstAttribute="leading" secondItem="8IA-XA-SoE" secondAttribute="leading" constant="10" id="XxZ-Ez-hhu"/>
-                                        <constraint firstItem="v6U-5h-bK7" firstAttribute="leading" secondItem="VqU-JT-dOV" secondAttribute="trailing" constant="3" id="iFp-SE-VJR"/>
+                                        <constraint firstItem="v6U-5h-bK7" firstAttribute="top" secondItem="8IA-XA-SoE" secondAttribute="topMargin" constant="11" id="9iC-tw-AKD"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="v6U-5h-bK7" secondAttribute="trailing" constant="10" id="9zY-fh-sK7"/>
+                                        <constraint firstItem="v6U-5h-bK7" firstAttribute="leading" secondItem="VqU-JT-dOV" secondAttribute="trailing" constant="10" id="NNk-La-ljT"/>
+                                        <constraint firstItem="VqU-JT-dOV" firstAttribute="leading" secondItem="8IA-XA-SoE" secondAttribute="leading" constant="10" id="ivv-Wr-ZqL"/>
+                                        <constraint firstItem="VqU-JT-dOV" firstAttribute="top" secondItem="8IA-XA-SoE" secondAttribute="top" constant="11" id="jmF-I9-uib"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="v6U-5h-bK7" secondAttribute="bottom" constant="11" id="xhT-An-Stb"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
-                                    <outlet property="imageCategoryIV" destination="VqU-JT-dOV" id="gIA-3x-0mW"/>
-                                    <outlet property="nameCategoryLabel" destination="v6U-5h-bK7" id="Ih0-Yg-Ngm"/>
-                                    <outlet property="subCategoryIV" destination="VqU-JT-dOV" id="ee2-or-7vf"/>
-                                    <outlet property="subCategoryLabel" destination="v6U-5h-bK7" id="x00-b2-mxq"/>
+                                    <outlet property="subCategoryIV" destination="VqU-JT-dOV" id="B6C-J5-88T"/>
+                                    <outlet property="subCategoryLabel" destination="v6U-5h-bK7" id="Vd4-fY-j0x"/>
                                     <segue destination="8GA-J1-I9m" kind="show" id="xdz-hK-b84"/>
                                 </connections>
                             </tableViewCell>
@@ -452,7 +451,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="02P-6M-GcJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2854" y="139"/>
+            <point key="canvasLocation" x="2853.5999999999999" y="138.98050974512745"/>
         </scene>
     </scenes>
     <resources>

@@ -8,65 +8,60 @@
 
 import Foundation
 
-//
-//struct RequestJS:Decodable {
-//    var category: [Category?]
-//}
+struct ItemCategory: Codable {
+    var name: String?
+    var sortOrder: String?
+    var iconImage: String?
+    var iconImageActive: String?
+    var subcategories: [ItemSubcategory]?
 
+    enum CodingKeys: String, CodingKey {
+        case name, sortOrder, iconImage, iconImageActive, subcategories
+    }
 
-class Category {
-    var name: String
-    var sortOrder: Int
-    var image: String
-    var iconImage: String
-    var iconImageActive: String
-    var subcategories: [Subcategories]
-    
-    init?(data: NSDictionary){
-        guard let name = data["name"] as? String,
-        let sortOrder = data["sortOrder"] as? String,
-        let image = data["image"] as? String,
-        let iconImage = data["iconImage"] as? String,
-        let iconImageActive = data["iconImageActive"] as? String,
-            let subcategories = data["Subcategories"] as? [Subcategories]
-            else { return nil }
-        self.name = name
-        self.sortOrder = Int(sortOrder) ?? 0
-        self.image = image
-        self.iconImage = iconImage
-        self.iconImageActive = iconImageActive
-        self.subcategories = subcategories
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(name, forKey: .name)
+        try container.encode(sortOrder, forKey: .sortOrder)
+        try container.encode(iconImage, forKey: .iconImage)
+        try container.encode(iconImageActive, forKey: .iconImageActive)
+        try container.encode(subcategories, forKey: .subcategories)
+    }
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        name = try? container.decode(String.self, forKey: .name)
+        sortOrder = try? container.decode(String.self, forKey: .sortOrder)
+        iconImage = try? container.decode(String.self, forKey: .iconImage)
+        iconImageActive = try? container.decode(String.self, forKey: .iconImageActive)
+        subcategories = try? container.decode([ItemSubcategory].self, forKey: .subcategories)
     }
 }
 
-class Subcategories {
-    var id: Int
-    var iconImage: String
-    var sortOrder: String
-    var name: String
-    var type: String
-    
-    init?(data: NSDictionary) {
-        guard let id = data["id"] as? Int,
-        let iconImage = data["iconImage"] as? String,
-        let sortOrder = data["String"] as? String,
-        let name = data["String"] as? String,
-            let type = data["type"] as? String else {return nil}
-        
-        self.id = Int(id)
-        self.iconImage = iconImage
-        self.sortOrder = sortOrder
-        self.name = name
-        self.type = type
-        
+struct ItemSubcategory: Codable {
+    var id: String?
+    var iconImage: String?
+    var sortOrder: String?
+    var name: String?
+    var type: String?
+
+    enum CodingKeys: String, CodingKey {
+        case id, iconImage, sortOrder, name, type
+    }
+
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(id, forKey: .id)
+        try container.encode(name, forKey: .name)
+        try container.encode(sortOrder, forKey: .sortOrder)
+        try container.encode(iconImage, forKey: .iconImage)
+        try container.encode(type, forKey: .type)
+    }
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        id = try? container.decode(String.self, forKey: .id)
+        name = try? container.decode(String.self, forKey: .name)
+        sortOrder = try? container.decode(String.self, forKey: .sortOrder)
+        iconImage = try? container.decode(String.self, forKey: .iconImage)
+        type = try? container.decode(String.self, forKey: .type)
     }
 }
-
-//class CategoryLoaded {
-//    let name: String = ""
-//    var sortOrder: String
-//    var image: String
-//    var iconImage: String
-//    var iconImageActive: String
-//    var subcategories: [Subcategories]
-//}
