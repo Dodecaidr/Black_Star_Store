@@ -10,12 +10,17 @@
 		2134CA7B23EAC91E008BAB6A /* StructJSonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2134CA7A23EAC91E008BAB6A /* StructJSonData.swift */; };
 		2733B03B2060C14ECC74EF00 /* Pods_Project_SkillBox_Black_Star.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A53D5F05BFC39EE7EA94C67 /* Pods_Project_SkillBox_Black_Star.framework */; };
 		420B7B4F23EA0B2C0082074D /* JSONRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420B7B4E23EA0B2C0082074D /* JSONRequest.swift */; };
+		4231B07123F97704002C57BB /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4231B07023F97704002C57BB /* ProductViewController.swift */; };
 		4244C8FB23E7111A00E48E8D /* BusketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4244C8FA23E7111A00E48E8D /* BusketView.swift */; };
 		4244C8FE23E7114C00E48E8D /* BusketView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4244C8FD23E7114C00E48E8D /* BusketView.xib */; };
 		425A164B23ECA24C00C0C6EF /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425A164A23ECA24C00C0C6EF /* CategoryTableViewController.swift */; };
 		425A164D23ECA79500C0C6EF /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425A164C23ECA79500C0C6EF /* CategoryTableViewCell.swift */; };
 		4265349723F02A7A003D0E22 /* SubCategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4265349623F02A7A003D0E22 /* SubCategoryTableViewController.swift */; };
 		4265349923F035EA003D0E22 /* SubCategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4265349823F035EA003D0E22 /* SubCategoryTableViewCell.swift */; };
+		42C6827423F84231006F8EA5 /* ProductCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C6827323F84231006F8EA5 /* ProductCollectionViewController.swift */; };
+		42C6827623F84271006F8EA5 /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C6827523F84271006F8EA5 /* ProductCollectionViewCell.swift */; };
+		42C6827A23F84606006F8EA5 /* StructProductJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C6827923F84606006F8EA5 /* StructProductJSON.swift */; };
+		42C6827C23F84621006F8EA5 /* JSONRequestProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C6827B23F84621006F8EA5 /* JSONRequestProduct.swift */; };
 		42FB705223E354E8000A1625 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FB705123E354E8000A1625 /* AppDelegate.swift */; };
 		42FB705423E354E8000A1625 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FB705323E354E8000A1625 /* SceneDelegate.swift */; };
 		42FB705923E354E8000A1625 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42FB705723E354E8000A1625 /* Main.storyboard */; };
@@ -29,12 +34,17 @@
 		2134CA7A23EAC91E008BAB6A /* StructJSonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructJSonData.swift; sourceTree = "<group>"; };
 		2F6F21D9156733111D1009C6 /* Pods-Project_SkillBox_Black_Star.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project_SkillBox_Black_Star.debug.xcconfig"; path = "Target Support Files/Pods-Project_SkillBox_Black_Star/Pods-Project_SkillBox_Black_Star.debug.xcconfig"; sourceTree = "<group>"; };
 		420B7B4E23EA0B2C0082074D /* JSONRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONRequest.swift; sourceTree = "<group>"; };
-		4244C8FA23E7111A00E48E8D /* BusketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusketView.swift; sourceTree = "<group>"; };
+		4231B07023F97704002C57BB /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
+		4244C8FA23E7111A00E48E8D /* BusketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusketView.swift; sourceTree = "<group>"; usesTabs = 0; };
 		4244C8FD23E7114C00E48E8D /* BusketView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BusketView.xib; sourceTree = "<group>"; };
 		425A164A23ECA24C00C0C6EF /* CategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
 		425A164C23ECA79500C0C6EF /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		4265349623F02A7A003D0E22 /* SubCategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCategoryTableViewController.swift; sourceTree = "<group>"; };
 		4265349823F035EA003D0E22 /* SubCategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCategoryTableViewCell.swift; sourceTree = "<group>"; };
+		42C6827323F84231006F8EA5 /* ProductCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewController.swift; sourceTree = "<group>"; };
+		42C6827523F84271006F8EA5 /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
+		42C6827923F84606006F8EA5 /* StructProductJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructProductJSON.swift; sourceTree = "<group>"; };
+		42C6827B23F84621006F8EA5 /* JSONRequestProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONRequestProduct.swift; sourceTree = "<group>"; };
 		42FB704E23E354E8000A1625 /* Project_SkillBox_Black_Star.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project_SkillBox_Black_Star.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42FB705123E354E8000A1625 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42FB705323E354E8000A1625 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,8 +90,8 @@
 		420B7B4D23EA0AAF0082074D /* Json */ = {
 			isa = PBXGroup;
 			children = (
-				420B7B4E23EA0B2C0082074D /* JSONRequest.swift */,
-				2134CA7A23EAC91E008BAB6A /* StructJSonData.swift */,
+				42C6827723F8455B006F8EA5 /* Category */,
+				42C6827823F8457C006F8EA5 /* Product */,
 			);
 			path = Json;
 			sourceTree = "<group>";
@@ -114,6 +124,34 @@
 			path = SubCategory;
 			sourceTree = "<group>";
 		};
+		42C6827223F84196006F8EA5 /* Product */ = {
+			isa = PBXGroup;
+			children = (
+				42C6827323F84231006F8EA5 /* ProductCollectionViewController.swift */,
+				42C6827523F84271006F8EA5 /* ProductCollectionViewCell.swift */,
+				4231B07023F97704002C57BB /* ProductViewController.swift */,
+			);
+			path = Product;
+			sourceTree = "<group>";
+		};
+		42C6827723F8455B006F8EA5 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				420B7B4E23EA0B2C0082074D /* JSONRequest.swift */,
+				2134CA7A23EAC91E008BAB6A /* StructJSonData.swift */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		42C6827823F8457C006F8EA5 /* Product */ = {
+			isa = PBXGroup;
+			children = (
+				42C6827B23F84621006F8EA5 /* JSONRequestProduct.swift */,
+				42C6827923F84606006F8EA5 /* StructProductJSON.swift */,
+			);
+			path = Product;
+			sourceTree = "<group>";
+		};
 		42FB704523E354E8000A1625 = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +176,7 @@
 				4244C8FC23E7111E00E48E8D /* Castom view */,
 				420B7B4D23EA0AAF0082074D /* Json */,
 				425A164823ECA1E100C0C6EF /* Category */,
+				42C6827223F84196006F8EA5 /* Product */,
 				42FB705123E354E8000A1625 /* AppDelegate.swift */,
 				42FB705323E354E8000A1625 /* SceneDelegate.swift */,
 				42FB706823E365DB000A1625 /* StartViewController.swift */,
@@ -266,16 +305,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42C6827C23F84621006F8EA5 /* JSONRequestProduct.swift in Sources */,
 				4265349723F02A7A003D0E22 /* SubCategoryTableViewController.swift in Sources */,
 				4244C8FB23E7111A00E48E8D /* BusketView.swift in Sources */,
 				42FB705223E354E8000A1625 /* AppDelegate.swift in Sources */,
 				42FB706923E365DB000A1625 /* StartViewController.swift in Sources */,
+				42C6827423F84231006F8EA5 /* ProductCollectionViewController.swift in Sources */,
+				4231B07123F97704002C57BB /* ProductViewController.swift in Sources */,
 				425A164B23ECA24C00C0C6EF /* CategoryTableViewController.swift in Sources */,
+				42C6827623F84271006F8EA5 /* ProductCollectionViewCell.swift in Sources */,
 				42FB705423E354E8000A1625 /* SceneDelegate.swift in Sources */,
 				4265349923F035EA003D0E22 /* SubCategoryTableViewCell.swift in Sources */,
 				2134CA7B23EAC91E008BAB6A /* StructJSonData.swift in Sources */,
 				42FB705C23E354E8000A1625 /* Project_SkillBox_Black_Star.xcdatamodeld in Sources */,
 				420B7B4F23EA0B2C0082074D /* JSONRequest.swift in Sources */,
+				42C6827A23F84606006F8EA5 /* StructProductJSON.swift in Sources */,
 				425A164D23ECA79500C0C6EF /* CategoryTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

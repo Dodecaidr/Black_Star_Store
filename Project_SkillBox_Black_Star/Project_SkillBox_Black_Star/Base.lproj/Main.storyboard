@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -111,7 +110,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="Vby-5B-R4h">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="sDZ-qp-IoH">
-                            <view key="customView" contentMode="scaleToFill" id="9ye-2J-J6F" customClass="BusketView" customModule="Project_SkillBox_Black_Star" customModuleProvider="target">
+                            <view key="customView" autoresizesSubviews="NO" contentMode="scaleToFill" id="9ye-2J-J6F" customClass="BusketView" customModule="Project_SkillBox_Black_Star" customModuleProvider="target">
                                 <rect key="frame" x="304" y="0.0" width="55" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -122,84 +121,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bdj-sp-yrx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1997.5999999999999" y="138.98050974512745"/>
-        </scene>
-        <!--Collection View Controller-->
-        <scene sceneID="8a1-CP-ajp">
-            <objects>
-                <collectionViewController id="8GA-J1-I9m" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Fe7-1L-TOw">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ed0-6H-AKu">
-                            <size key="itemSize" width="122" height="163"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="R4o-t0-B0D">
-                                <rect key="frame" x="0.0" y="0.0" width="122" height="163"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Rq5-ac-5t9">
-                                    <rect key="frame" x="0.0" y="0.0" width="122" height="163"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Test_Image" translatesAutoresizingMaskIntoConstraints="NO" id="aru-9H-kb4">
-                                            <rect key="frame" x="0.0" y="0.0" width="122" height="103"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="99999 ₽" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bM7-wz-0Ae">
-                                            <rect key="frame" x="8" y="111" width="53" height="16"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M80-95-53N">
-                                            <rect key="frame" x="68" y="108" width="50" height="19"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <fontDescription key="fontDescription" name="SnellRoundhand-Bold" family="Snell Roundhand" pointSize="15"/>
-                                            <state key="normal" title="Buy">
-                                                <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
-                                            </state>
-                                            <connections>
-                                                <segue destination="pSF-hE-bSk" kind="show" id="BNy-zN-Gtu"/>
-                                            </connections>
-                                        </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="6" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yRK-2Z-ZHd">
-                                            <rect key="frame" x="8" y="129" width="110" height="32"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name="SnellRoundhand" family="Snell Roundhand" pointSize="12"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </collectionViewCellContentView>
-                                <size key="customSize" width="122" height="163"/>
-                            </collectionViewCell>
-                        </cells>
-                        <connections>
-                            <outlet property="dataSource" destination="8GA-J1-I9m" id="YXz-8m-j1h"/>
-                            <outlet property="delegate" destination="8GA-J1-I9m" id="HKc-Lz-2b4"/>
-                        </connections>
-                    </collectionView>
-                    <navigationItem key="navigationItem" id="hGJ-IL-6bN">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="mzo-ul-NzU">
-                            <view key="customView" contentMode="scaleToFill" id="PGl-iP-oPT">
-                                <rect key="frame" x="304" y="0.0" width="55" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            </view>
-                        </barButtonItem>
-                    </navigationItem>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wjv-ks-xlZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3903" y="139"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="YsZ-Rl-chJ">
@@ -404,7 +325,7 @@
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Test_Image" translatesAutoresizingMaskIntoConstraints="NO" id="VqU-JT-dOV">
                                             <rect key="frame" x="10" y="11" width="72" height="73"/>
-                                            <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="73" id="J47-In-4Yj"/>
                                                 <constraint firstAttribute="width" constant="72" id="a7o-Eq-RZN"/>
@@ -430,7 +351,7 @@
                                 <connections>
                                     <outlet property="subCategoryIV" destination="VqU-JT-dOV" id="B6C-J5-88T"/>
                                     <outlet property="subCategoryLabel" destination="v6U-5h-bK7" id="Vd4-fY-j0x"/>
-                                    <segue destination="8GA-J1-I9m" kind="show" id="xdz-hK-b84"/>
+                                    <segue destination="jFM-Fa-GUz" kind="show" identifier="SubCategoryOnProduct" id="ZtX-av-ZWG"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -439,19 +360,87 @@
                             <outlet property="delegate" destination="BlB-pX-1CG" id="drS-2i-OZe"/>
                         </connections>
                     </tableView>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" id="STz-go-ul0">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="OlU-PL-lho">
-                            <view key="customView" contentMode="scaleToFill" id="WhA-Xd-auZ" customClass="BusketView" customModule="Project_SkillBox_Black_Star" customModuleProvider="target">
+                            <view key="customView" autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="WhA-Xd-auZ" customClass="BusketView" customModule="Project_SkillBox_Black_Star" customModuleProvider="target">
                                 <rect key="frame" x="304" y="0.0" width="55" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="02P-6M-GcJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2853.5999999999999" y="138.98050974512745"/>
+        </scene>
+        <!--Product Collection View Controller-->
+        <scene sceneID="55R-ht-B6i">
+            <objects>
+                <collectionViewController id="jFM-Fa-GUz" customClass="ProductCollectionViewController" customModule="Project_SkillBox_Black_Star" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Aix-dK-vzL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yXL-vU-SvT">
+                            <size key="itemSize" width="180" height="180"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ProductCell" id="fiB-ML-Bea" customClass="ProductCollectionViewCell" customModule="Project_SkillBox_Black_Star" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="180" height="180"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="180" height="180"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Diz-t6-h2k">
+                                            <rect key="frame" x="8" y="99" width="105" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Desc" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QyD-4b-WYo">
+                                            <rect key="frame" x="8" y="126" width="39" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jZf-Cz-YTl">
+                                            <rect key="frame" x="0.0" y="8" width="175" height="83"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="58N-Tk-VHK">
+                                            <rect key="frame" x="121" y="99" width="46" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Button"/>
+                                        </button>
+                                    </subviews>
+                                </view>
+                                <size key="customSize" width="180" height="180"/>
+                                <connections>
+                                    <outlet property="productDescriptionLabel" destination="QyD-4b-WYo" id="Rwt-sf-MLU"/>
+                                    <outlet property="productIV" destination="jZf-Cz-YTl" id="fG6-e4-oKl"/>
+                                    <outlet property="productPriceLabel" destination="Diz-t6-h2k" id="2hZ-D6-eiw"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="jFM-Fa-GUz" id="xGj-w5-7N9"/>
+                            <outlet property="delegate" destination="jFM-Fa-GUz" id="pAX-pS-pPg"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="deF-cr-BSh"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hnL-LW-65z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3792.8000000000002" y="138.98050974512745"/>
         </scene>
     </scenes>
     <resources>

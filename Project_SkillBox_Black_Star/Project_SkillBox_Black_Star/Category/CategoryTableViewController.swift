@@ -27,7 +27,6 @@ class CategoryTableViewController: UITableViewController {
             DispatchQueue.main.async {
             self.tableView.reloadData()
             }
-
         }
     }
     
@@ -54,7 +53,7 @@ class CategoryTableViewController: UITableViewController {
         else {
         let category = categories[indexPath.row]
         cell.nameCategoryLabel.text = category.name ?? ""
-            cell.imageCategoryIV?.sd_setImage(with: URL(string:"https://blackstarwear.ru/\(category.iconImage ?? "image/catalog/im2017/3.png")"), completed: nil )
+        cell.imageCategoryIV?.sd_setImage(with: URL(string:"https://blackstarwear.ru/\(category.iconImage ?? "image/catalog/im2017/3.png")"), completed: nil )
             
         }
         return cell

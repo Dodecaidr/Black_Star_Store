@@ -11,7 +11,13 @@ import UIKit
 class BusketView: UIView {
     
     @IBOutlet weak var busketImage: UIImageView!
-    @IBOutlet weak var buttonPrice: UIButton!
+    @IBOutlet weak var buttonPrice: UIButton!{
+        didSet {
+                   buttonPrice.layer.masksToBounds = true
+            buttonPrice?.layer.cornerRadius = (buttonPrice?.frame.height)! / 1.5
+               }
+    }
+    
     
     var quantity: String {
         get {
@@ -43,6 +49,7 @@ class BusketView: UIView {
     private func loadViewFromNib() -> UIView? {
         let nibView = UINib(nibName: nibName, bundle: nil)
         return nibView.instantiate(withOwner: self, options: nil).first as? UIView
+        
     }
     
 }
