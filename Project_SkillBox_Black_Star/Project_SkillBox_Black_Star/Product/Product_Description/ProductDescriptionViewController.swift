@@ -95,5 +95,18 @@ extension ProductDescriptionViewController:  UITableViewDelegate, UITableViewDat
         return cell
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+        var describProduct = ""
+        describProduct = (products?.colorName ?? "none") + " " + (products?.offers[indexPath.row].size ?? "none")
+        
+        let ac = UIAlertController(title: "Do you want to add this item?", message: describProduct, preferredStyle: .actionSheet)
+        let cancelButton = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let addbutton = UIAlertAction(title: "add", style: .default, handler: nil)
+        
+        ac.addAction(cancelButton)
+        ac.addAction(addbutton)
+        present(ac, animated: true, completion: nil)
+        //https://swiftbook.ru/content/34-video-4/
+    }
 }
