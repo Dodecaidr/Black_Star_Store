@@ -14,7 +14,7 @@ class BusketView: UIView {
     @IBOutlet weak var buttonPrice: UIButton!{
         didSet {
                    buttonPrice.layer.masksToBounds = true
-            buttonPrice?.layer.cornerRadius = (buttonPrice?.frame.height)! / 1.5
+            buttonPrice?.layer.cornerRadius = (buttonPrice?.frame.height)! / 2
                }
     }
     

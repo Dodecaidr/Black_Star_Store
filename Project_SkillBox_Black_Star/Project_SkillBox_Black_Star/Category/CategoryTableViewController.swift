@@ -11,32 +11,40 @@ import Alamofire
 import SDWebImage
 
 class CategoryTableViewController: UITableViewController {
-
+    
     var categories: [ItemCategory] = []
     var image: UIImageView = UIImageView(image: UIImage(contentsOfFile: "Test_Image"))
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupNavigationBar()
+    }
+    
+    func setupNavigationBar() {
+        navigationController?.navigationBar.tintColor = .white
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.tintColor = .white
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-
+        
         JsonRequest().loadCategory { list in
             self.categories = list
             DispatchQueue.main.async {
-            self.tableView.reloadData()
+                self.tableView.reloadData()
             }
         }
     }
     
     // MARK: - Table view data source
-
+    
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard
             categories.count != 0 else {
-            return 1
+                return 1
         }
         return categories.count
     }
@@ -51,9 +59,9 @@ class CategoryTableViewController: UITableViewController {
             cell.nameCategoryLabel.text = "23231"
         }
         else {
-        let category = categories[indexPath.row]
-        cell.nameCategoryLabel.text = category.name ?? ""
-        cell.imageCategoryIV?.sd_setImage(with: URL(string:"https://blackstarwear.ru/\(category.iconImage ?? "image/catalog/im2017/3.png")"), completed: nil )
+            let category = categories[indexPath.row]
+            cell.nameCategoryLabel.text = category.name ?? ""
+            cell.imageCategoryIV?.sd_setImage(with: URL(string:"https://blackstarwear.ru/\(category.iconImage ?? "image/catalog/im2017/3.png")"), completed: nil )
             
         }
         return cell

@@ -26,7 +26,6 @@ class ProductCollectionViewController: UICollectionViewController {
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
             }
-            
         }
     }
 
@@ -49,12 +48,12 @@ class ProductCollectionViewController: UICollectionViewController {
         }
         else {
             let product = products[indexPath.row]
-            let image = product.productImages[0].imageURL
             var price = ""
             let priceSepar = products[indexPath.row].price!.split(separator: ".")
             price = price + priceSepar[0]
-            cell.productIV.sd_setImage(with: URL(string:"https://blackstarwear.ru/\(image!)"), completed: nil)
-            cell.productPriceLabel.text = price
+            cell.productIV.image = UIImage(contentsOfFile: "Test_Image")
+            cell.productIV.sd_setImage(with: URL(string:"https://blackstarwear.ru/\(String(product.mainImage ?? "asd"))"), completed: nil)
+            cell.productPriceLabel.text = price + " ₽"
             cell.productDescriptionLabel.text = product.description!.htmlToString
 
         }

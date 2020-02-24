@@ -8,24 +8,83 @@
 
 import UIKit
 
-class ProductDescriptionViewController: UIViewController {
-
+class ProductDescriptionViewController: UIViewController, UIScrollViewDelegate {
+    
+    
+    
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var nameProductLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var productImageView: UIImageView!
+    @IBOutlet weak var descriptionTextView: UITextView!
+    @IBOutlet weak var othersTabelView: UITableView!
+    @IBOutlet weak var imageScrolView: UIScrollView!
+    @IBOutlet weak var imagePageControl: UIPageControl!
+    @IBOutlet weak var imageFrameView: UIView!
     
     var products: ItemProduct?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-            
+        
+        othersTabelView.isHidden = true
+        var countImage = 0
+        imagePageControl.numberOfPages = products?.productImages.count ?? 0
+        countImage = products?.productImages.count ?? 0
+        
+        var price = ""
+        let priceSepar = products?.price?.split(separator: ".")
+        price = price + (priceSepar?[0] ?? "цена не указана")
+        
+       imageScrolView.frame = CGRect(x: 0, y: 0, width:UIScreen.main.bounds.width , height:imageFrameView.frame.height)
+        
         nameProductLabel.text = products?.englishName
-        priceLabel.text = products?.price
-        descriptionLabel.text = products?.description?.htmlToString
-        productImageView.sd_setImage(with: URL(string:"https://blackstarwear.ru/\(String(products?.productImages[0].imageURL ?? "sad"))"), completed: nil)
+        priceLabel.text = price + " ₽"
+        descriptionTextView.text = products?.description?.htmlToString
+        
+        for i in 0..<countImage {
+            
+            let imageView = UIImageView()
+            imageView.contentMode = .scaleToFill
+            imageView.sd_setImage(with: URL(string:"https://blackstarwear.ru/\(String(products?.productImages[i].imageURL ?? "sad"))"), completed: nil)
+           
+            
+            let xPos = CGFloat(i) * self.view.bounds.size.width
+            imageView.frame = CGRect(x: xPos, y: 0, width: view.frame.size.width, height: imageFrameView.frame.size.height)
+            imageScrolView.contentSize.width = view.frame.size.width * CGFloat(i+1)
+            imageScrolView.addSubview(imageView)
+        }
         
     }
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let page = imageScrolView.contentOffset.x/imageScrolView.frame.width
+        
+        imagePageControl.currentPage = Int(page)
+    }
+    @IBAction func cancelButtonTabelView(_ sender: Any) {
+        othersTabelView.isHidden = true
+    }
+    
+    @IBAction func pressAddButton(_ sender: Any) {
+        
+        othersTabelView.isHidden = false
+        
+    }
+}
 
+
+extension ProductDescriptionViewController:  UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return products?.offers.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCell", for: indexPath) as! ProductTableViewCell
+        
+        cell.colorLabel.text = products?.colorName
+        cell.sizeLabel.text = products?.offers[indexPath.row].size
+        
+        return cell
+    }
+    
+    
 }
