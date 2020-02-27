@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ProductDescriptionViewController: UIViewController, UIScrollViewDelegate {
     
@@ -20,44 +21,48 @@ class ProductDescriptionViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var imageScrolView: UIScrollView!
     @IBOutlet weak var imagePageControl: UIPageControl!
     @IBOutlet weak var imageFrameView: UIView!
+    @IBOutlet weak var saveLabel: UILabel!
     
     var products: ItemProduct?
+    var productCorData: [Product] = []
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-         imageScrolView.frame = CGRect(x: 0, y: 0, width:UIScreen.main.bounds.width , height:imageFrameView.frame.height)
+        imageScrolView.frame = CGRect(x: 0, y: 0, width:UIScreen.main.bounds.width , height:imageFrameView.frame.height)
         var countImage = 0
-              imagePageControl.numberOfPages = products?.productImages.count ?? 0
-              countImage = products?.productImages.count ?? 0
+        imagePageControl.numberOfPages = products?.productImages.count ?? 0
+        countImage = products?.productImages.count ?? 0
         
         for i in 0..<countImage {
-         
-         let imageView = UIImageView()
-         imageView.contentMode = .scaleToFill
-         imageView.sd_setImage(with: URL(string:"https://blackstarwear.ru/\(String(products?.productImages[i].imageURL ?? "sad"))"), completed: nil)
-        
-         
-         let xPos = CGFloat(i) * self.view.bounds.size.width
-         imageView.frame = CGRect(x: xPos, y: 0, width: view.frame.size.width, height: imageFrameView.frame.size.height)
-         imageScrolView.contentSize.width = view.frame.size.width * CGFloat(i+1)
-         imageScrolView.addSubview(imageView)
+            
+            let imageView = UIImageView()
+            imageView.contentMode = .scaleAspectFit
+            imageView.sd_setImage(with: URL(string:"https://blackstarwear.ru/\(String(products?.productImages[i].imageURL ?? "sad"))"), completed: nil)
+            
+            
+            let xPos = CGFloat(i) * self.view.bounds.size.width
+            imageView.frame = CGRect(x: xPos, y: 0, width: view.frame.size.width, height: imageFrameView.frame.size.height)
+            imageScrolView.contentSize.width = view.frame.size.width * CGFloat(i+1)
+            imageScrolView.addSubview(imageView)
         }
         
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        saveLabel.layer.masksToBounds = true
+        saveLabel.layer.cornerRadius = 10
         view.overrideUserInterfaceStyle = .light
         
         othersTabelView.isHidden = true
-      
+        
         
         var price = ""
         let priceSepar = products?.price?.split(separator: ".")
         price = price + (priceSepar?[0] ?? "цена не указана")
         
-      
+        
         nameProductLabel.text = products?.englishName
         priceLabel.text = price + " ₽"
         descriptionTextView.text = products?.description?.htmlToString
@@ -96,17 +101,63 @@ extension ProductDescriptionViewController:  UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+        
         var describProduct = ""
         describProduct = (products?.colorName ?? "none") + " " + (products?.offers[indexPath.row].size ?? "none")
         
         let ac = UIAlertController(title: "Do you want to add this item?", message: describProduct, preferredStyle: .actionSheet)
         let cancelButton = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        let addbutton = UIAlertAction(title: "add", style: .default, handler: nil)
+        let addbutton = UIAlertAction(title: "add", style: .default) {
+            _ in
+            self.saveTask(collorProduct: "asd", imageProduct: "sd", nameProduct: "sd", piceProduct: "asd", sizeProduct: "sda")
+            
+            self.saveLabel.isHidden = false
+            self.saveLabel.text = "Item added to cart"
+            self.saveLabel.alpha = 1
+            
+            UIView.animate(withDuration: 3, animations: {
+                self.saveLabel.alpha = 0
+            }, completion: { _ in
+                self.saveLabel.isHidden = true
+            })
+        }
         
         ac.addAction(cancelButton)
         ac.addAction(addbutton)
         present(ac, animated: true, completion: nil)
-        //https://swiftbook.ru/content/34-video-4/
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    private func saveTask(collorProduct collor: String, imageProduct image: String, nameProduct name: String, piceProduct price: String, sizeProduct size: String){
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        guard let entity = NSEntityDescription.entity(forEntityName: "Product", in: context) else { return }
+        
+        let taskObject = Product(entity: entity, insertInto: context)
+        
+        taskObject.collor = collor
+        taskObject.image = image
+        taskObject.name = name
+        taskObject.price = price
+        taskObject.size = size
+        
+        do {
+            try context.save()
+            
+        } catch let error as NSError {
+            print(error.localizedDescription)
+            self.saveLabel.isHidden = false
+            self.saveLabel.text = "Failed to add product to cart"
+            self.saveLabel.alpha = 1
+            
+            UIView.animate(withDuration: 4, animations: {
+                self.saveLabel.alpha = 0
+            }, completion: { _ in
+                self.saveLabel.isHidden = true
+            })
+        }
     }
 }

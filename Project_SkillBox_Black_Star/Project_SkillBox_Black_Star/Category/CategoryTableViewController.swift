@@ -36,6 +36,10 @@ class CategoryTableViewController: UITableViewController {
                 self.tableView.reloadData()
             }
         }
+        
+        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
     }
     
     // MARK: - Table view data source
