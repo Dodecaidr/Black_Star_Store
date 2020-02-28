@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Jxm-gy-VSQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uvA-18-bME">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -226,7 +226,8 @@
                             </view>
                             <tableView autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="L4g-tO-xFJ">
                                 <rect key="frame" x="0.0" y="392" width="375" height="226"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="separatorColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <color key="sectionIndexBackgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="kUi-03-SaZ">
                                     <rect key="frame" x="0.0" y="133" width="375" height="45"/>
@@ -372,10 +373,10 @@
             </objects>
             <point key="canvasLocation" x="4864.8000000000002" y="138.98050974512745"/>
         </scene>
-        <!--View Controller-->
+        <!--Basket View Controller-->
         <scene sceneID="Nbh-ir-cAp">
             <objects>
-                <viewController id="uvA-18-bME" sceneMemberID="viewController">
+                <viewController id="uvA-18-bME" customClass="BasketViewController" customModule="Project_SkillBox_Black_Star" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2Xr-pm-Fit">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -385,7 +386,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="101" id="eK0-vC-RZ1">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BasketCell" rowHeight="101" id="eK0-vC-RZ1" customClass="BasketTableViewCell" customModule="Project_SkillBox_Black_Star" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="343" height="101"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eK0-vC-RZ1" id="B9w-2I-OYy">
@@ -432,6 +433,14 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="basketColorLabel" destination="8uH-Hh-cFj" id="AyI-OI-dzI"/>
+                                            <outlet property="basketDelite" destination="loK-z7-p0e" id="qeA-kd-mPo"/>
+                                            <outlet property="basketImage" destination="DEF-9S-uaJ" id="7OE-4J-Vhl"/>
+                                            <outlet property="basketNameLabel" destination="q87-W1-Eck" id="Cl6-5P-L0K"/>
+                                            <outlet property="basketPriceLabel" destination="GhV-vB-eyk" id="Zwe-LK-UDX"/>
+                                            <outlet property="basketSizeLabel" destination="PoS-ES-gWO" id="e3b-GQ-odQ"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -462,6 +471,12 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <viewLayoutGuide key="safeArea" id="qOn-hW-EYH"/>
                     </view>
+                    <navigationItem key="navigationItem" id="GAU-kg-voi"/>
+                    <connections>
+                        <outlet property="busketTabelView" destination="L6T-dc-k1e" id="tao-bo-Acl"/>
+                        <outlet property="byButton" destination="ELu-ZP-2VM" id="v7r-Wg-1n7"/>
+                        <outlet property="totalPriceLabel" destination="aXb-Gz-b6P" id="Ttp-k6-LqS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8lk-yO-5Hc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
