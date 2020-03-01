@@ -44,9 +44,6 @@
                                     <constraint firstAttribute="height" constant="36" id="ru1-aI-Ecy"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="gear_white"/>
-                                <connections>
-                                    <segue destination="uvA-18-bME" kind="show" id="MMa-2j-aJj"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -128,7 +125,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="Vby-5B-R4h">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="sDZ-qp-IoH">
+                        <barButtonItem key="rightBarButtonItem" title="Item" style="plain" id="sDZ-qp-IoH">
                             <view key="customView" autoresizesSubviews="NO" contentMode="scaleToFill" id="9ye-2J-J6F" customClass="BusketView" customModule="Project_SkillBox_Black_Star" customModuleProvider="target">
                                 <rect key="frame" x="309" y="0.0" width="50" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -380,13 +377,13 @@
         <!--Basket View Controller-->
         <scene sceneID="Nbh-ir-cAp">
             <objects>
-                <viewController id="uvA-18-bME" customClass="BasketViewController" customModule="Project_SkillBox_Black_Star" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BasketVC" id="uvA-18-bME" customClass="BasketViewController" customModule="Project_SkillBox_Black_Star" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2Xr-pm-Fit">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="L6T-dc-k1e">
-                                <rect key="frame" x="10" y="44" width="355" height="488.5"/>
+                                <rect key="frame" x="10" y="0.0" width="355" height="532.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BasketCell" rowHeight="101" id="eK0-vC-RZ1" customClass="BasketTableViewCell" customModule="Project_SkillBox_Black_Star" customModuleProvider="target">
@@ -486,7 +483,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add product to basket" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3w1-dr-ncC">
-                                <rect key="frame" x="102.5" y="345" width="170.5" height="21"/>
+                                <rect key="frame" x="102.5" y="323" width="170.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <nil key="highlightedColor"/>
@@ -540,7 +537,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8lk-yO-5Hc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2055" y="998"/>
+            <point key="canvasLocation" x="2108" y="845"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="RNM-GX-NfW">

@@ -76,7 +76,7 @@ class BasketViewController: UIViewController {
             print(error.localizedDescription)
         }
         
-        self.updateModel()
+        self.viewDidLoad()
         DispatchQueue.main.async {
             self.busketTabelView.reloadData()
         }

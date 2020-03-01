@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class BusketView: UIView {
     
@@ -15,7 +16,19 @@ class BusketView: UIView {
         didSet {
                    buttonPrice.layer.masksToBounds = true
             buttonPrice?.layer.cornerRadius = (buttonPrice?.frame.height)! / 2
-               }
+            
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let contex = appDelegate.persistentContainer.viewContext
+            let fetchRequest: NSFetchRequest<Product> = Product.fetchRequest()
+            var pruducts: [Product] = []
+            do {
+                pruducts = try contex.fetch(fetchRequest)
+                
+            } catch let error as NSError {
+                print(error.localizedDescription)
+            }
+            buttonPrice.setTitle(String(pruducts.count), for: .normal)
+    }
     }
     
     
@@ -52,4 +65,6 @@ class BusketView: UIView {
         
     }
     
+    @IBAction func openBasketButton(_ sender: Any) {
+    }
 }
