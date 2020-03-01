@@ -9,7 +9,6 @@
 import UIKit
 
 class BasketTableViewCell: UITableViewCell {
-
     @IBOutlet weak var basketImage: UIImageView!
     @IBOutlet weak var basketNameLabel: UILabel!
     @IBOutlet weak var basketSizeLabel: UILabel!

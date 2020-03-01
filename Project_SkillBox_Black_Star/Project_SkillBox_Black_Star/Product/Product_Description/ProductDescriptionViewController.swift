@@ -22,6 +22,7 @@ class ProductDescriptionViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var imagePageControl: UIPageControl!
     @IBOutlet weak var imageFrameView: UIView!
     @IBOutlet weak var saveLabel: UILabel!
+    @IBOutlet weak var addButton: UIButton!
     
     var products: ItemProduct?
     var productCorData: [Product] = []
@@ -54,6 +55,8 @@ class ProductDescriptionViewController: UIViewController, UIScrollViewDelegate {
         saveLabel.layer.masksToBounds = true
         saveLabel.layer.cornerRadius = 10
         view.overrideUserInterfaceStyle = .light
+        addButton.layer.masksToBounds = true
+        addButton.layer.cornerRadius = 10
         
         othersTabelView.isHidden = true
         
@@ -109,7 +112,7 @@ extension ProductDescriptionViewController:  UITableViewDelegate, UITableViewDat
         let cancelButton = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         let addbutton = UIAlertAction(title: "add", style: .default) {
             _ in
-            self.saveTask(collorProduct: "asd", imageProduct: "sd", nameProduct: "sd", piceProduct: "asd", sizeProduct: "sda")
+            self.saveTask(collorProduct: self.products!.colorName!, imageProduct: self.products!.mainImage!, nameProduct: self.products!.name!, piceProduct: self.products!.price!, sizeProduct: self.products!.offers[indexPath.row].size!)
             
             self.saveLabel.isHidden = false
             self.saveLabel.text = "Item added to cart"

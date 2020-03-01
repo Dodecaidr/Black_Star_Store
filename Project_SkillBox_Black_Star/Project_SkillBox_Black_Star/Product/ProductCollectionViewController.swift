@@ -43,7 +43,7 @@ class ProductCollectionViewController: UICollectionViewController {
         
         if products.count == 0 {
             cell.productIV.image = UIImage( contentsOfFile: "Test_Image")
-            cell.productPriceLabel.text = "!@3"
+            cell.productPriceLabel.text = "000"
             cell.productDescriptionLabel.text = "Здесь будет описание товара"
         }
         else {
