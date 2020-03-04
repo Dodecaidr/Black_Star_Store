@@ -11,6 +11,7 @@ import Alamofire
 import SDWebImage
 
 class CategoryTableViewController: UITableViewController {
+    @IBOutlet weak var busketCategiryItemBar: UIBarButtonItem!
     
     var categories: [ItemCategory] = []
     var image: UIImageView = UIImageView(image: UIImage(contentsOfFile: "Test_Image"))
@@ -20,10 +21,9 @@ class CategoryTableViewController: UITableViewController {
         setupNavigationBar()
     }
     
+    /// Настройка NAvigation Controller
     func setupNavigationBar() {
-        navigationController?.navigationBar.tintColor = .white
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.backgroundColor = .black
         navigationController?.navigationBar.tintColor = .white
     }
     
@@ -42,7 +42,7 @@ class CategoryTableViewController: UITableViewController {
         }
     }
     
-    // MARK: - Table view data source
+    // MARK: - Настройка таблицы
     
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -59,18 +59,25 @@ class CategoryTableViewController: UITableViewController {
         
         
         if categories.isEmpty {
+            tableView.allowsSelection = false // отключает нажатие на ячейку
             cell.imageCategoryIV.image = UIImage(contentsOfFile: "Test_Image")
-            cell.nameCategoryLabel.text = "23231"
+            cell.nameCategoryLabel.text = "Loading..."
         }
         else {
+            tableView.allowsSelection = true
             let category = categories[indexPath.row]
+            var iconImage = category.iconImage
+            if category.iconImage == "" {
+               iconImage = "image/catalog/style/modile/acc_cat.png"
+            }
             cell.nameCategoryLabel.text = category.name ?? ""
-            cell.imageCategoryIV?.sd_setImage(with: URL(string:"https://blackstarwear.ru/\(category.iconImage ?? "image/catalog/im2017/3.png")"), completed: nil )
+            cell.imageCategoryIV?.sd_setImage(with: URL(string:"https://blackstarwear.ru/\(iconImage ?? "image/catalog/im2017/3.png")"), completed: nil )
             
         }
         return cell
     }
     
+    // MARK: - Передача данных на SubCtegoty
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "CategorySub" {
             guard let indexPath = tableView.indexPathForSelectedRow else { return }

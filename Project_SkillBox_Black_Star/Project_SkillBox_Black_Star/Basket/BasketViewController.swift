@@ -30,11 +30,15 @@ class BasketViewController: UIViewController {
         
         zeroBusketLabel.isHidden = true
         zeroBusketLabel.alpha = 0
+        zeroBusketLabel.textColor = .white
+        
+        busketTabelView.isHidden = false
         
         byButton.layer.masksToBounds = true
         byButton.layer.cornerRadius = 10
     }
     
+    // MARK: - Получение данных из CoreData
     func updateModel(){
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -59,6 +63,7 @@ class BasketViewController: UIViewController {
         }
     }
     
+    // MARK: - Удаление из CoreData и настройка пустой карзины
     @IBAction func buyButtonAction(_ sender: Any) {
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -76,10 +81,12 @@ class BasketViewController: UIViewController {
             print(error.localizedDescription)
         }
         
-        self.viewDidLoad()
+        updateModel()
         DispatchQueue.main.async {
             self.busketTabelView.reloadData()
         }
+        
+        busketTabelView.isHidden = true
         
         UIView.animate(withDuration: 2, animations: {
             self.zeroBusketLabel.alpha = 1
@@ -88,7 +95,7 @@ class BasketViewController: UIViewController {
         })
     }
 }
-
+// MARK: - Настройка таблицы
 extension BasketViewController:  UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if  pruducts.count == 0 {
@@ -96,9 +103,13 @@ extension BasketViewController:  UITableViewDelegate, UITableViewDataSource {
             zeroBusketLabel.alpha = 1
             zeroBusketLabel.text = "Add product to basket"
             totalPriceLabel.text = "0 ₽"
+            
+            tableView.isHidden = true
         } else {
             zeroBusketLabel.isHidden = true
             zeroBusketLabel.alpha = 0
+            
+            tableView.isHidden = false
         }
         print(pruducts.count)
         return pruducts.count

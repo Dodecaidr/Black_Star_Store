@@ -27,6 +27,7 @@ class ProductDescriptionViewController: UIViewController, UIScrollViewDelegate {
     var products: ItemProduct?
     var productCorData: [Product] = []
     
+    // MARK: - Настройка ImageView and ScrolView
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
@@ -49,6 +50,7 @@ class ProductDescriptionViewController: UIViewController, UIScrollViewDelegate {
         }
         
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -72,23 +74,25 @@ class ProductDescriptionViewController: UIViewController, UIScrollViewDelegate {
         
         
     }
+    
+    // MARK: - НАстройка PageControll
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let page = imageScrolView.contentOffset.x/imageScrolView.frame.width
         
         imagePageControl.currentPage = Int(page)
     }
+    
     @IBAction func cancelButtonTabelView(_ sender: Any) {
         othersTabelView.isHidden = true
     }
     
     @IBAction func pressAddButton(_ sender: Any) {
-        
         othersTabelView.isHidden = false
         
     }
 }
 
-
+// MARK: - Настройка TabelView
 extension ProductDescriptionViewController:  UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return products?.offers.count ?? 0
@@ -108,6 +112,7 @@ extension ProductDescriptionViewController:  UITableViewDelegate, UITableViewDat
         var describProduct = ""
         describProduct = (products?.colorName ?? "none") + " " + (products?.offers[indexPath.row].size ?? "none")
         
+        // Настройка Алерт
         let ac = UIAlertController(title: "Do you want to add this item?", message: describProduct, preferredStyle: .actionSheet)
         let cancelButton = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         let addbutton = UIAlertAction(title: "add", style: .default) {
@@ -123,6 +128,7 @@ extension ProductDescriptionViewController:  UITableViewDelegate, UITableViewDat
             }, completion: { _ in
                 self.saveLabel.isHidden = true
             })
+            
         }
         
         ac.addAction(cancelButton)
@@ -132,6 +138,7 @@ extension ProductDescriptionViewController:  UITableViewDelegate, UITableViewDat
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
+// MARK: - Сохранение в CoreData
     private func saveTask(collorProduct collor: String, imageProduct image: String, nameProduct name: String, piceProduct price: String, sizeProduct size: String){
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate

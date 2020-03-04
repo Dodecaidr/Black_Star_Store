@@ -19,7 +19,7 @@ class ProductCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        collectionView.overrideUserInterfaceStyle = .light
+        collectionView.overrideUserInterfaceStyle = .light // Цвет интерфейса
         
         JsonRequestProduct().loadCategory(id: id ?? 0) { list in
             self.products = list
@@ -30,6 +30,7 @@ class ProductCollectionViewController: UICollectionViewController {
     }
 
     
+    // MARK: - Настройка Collection view
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         guard products.count != 0 else {
             return 1
@@ -41,12 +42,14 @@ class ProductCollectionViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCell", for: indexPath) as! ProductCollectionViewCell
         
         
-        if products.count == 0 {
+        if products.isEmpty {
+            collectionView.allowsSelection = false
             cell.productIV.image = UIImage( contentsOfFile: "Test_Image")
-            cell.productPriceLabel.text = "000"
-            cell.productDescriptionLabel.text = "Здесь будет описание товара"
+            cell.productPriceLabel.text = "Loading..."
+            cell.productDescriptionLabel.text = ""
         }
         else {
+            collectionView.allowsSelection = true
             let product = products[indexPath.row]
             var price = ""
             let priceSepar = products[indexPath.row].price!.split(separator: ".")
@@ -60,6 +63,7 @@ class ProductCollectionViewController: UICollectionViewController {
         return cell
     }
     
+    // MARK: - Передача Данных
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
     if segue.identifier == "DescriptionPdoduct" {
@@ -75,6 +79,7 @@ class ProductCollectionViewController: UICollectionViewController {
           }
 }
 
+// MARK: - НАстройка размера ячейки
 extension ProductCollectionViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -83,6 +88,7 @@ extension ProductCollectionViewController: UICollectionViewDelegateFlowLayout {
     
 }
 
+// MARK: - Удаление  HTML хештегов
    extension String {
        var htmlToAttributedString: NSAttributedString? {
            guard let data = data(using: .utf8) else { return NSAttributedString() }

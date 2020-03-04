@@ -10,12 +10,12 @@ import UIKit
 import SDWebImage
 
 class SubCategoryTableViewController: UITableViewController {
-
+    
     var subCategories: ItemCategory?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.overrideUserInterfaceStyle = .light
+        tableView.overrideUserInterfaceStyle = .light // меняем стиль интерфейса
         
         guard let _ = subCategories else {
             self.navigationController?.popViewController(animated: true)
@@ -30,7 +30,7 @@ class SubCategoryTableViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
     }
 
-    // MARK: - Table view data source
+    // MARK: - НАстройка таблицы
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -40,15 +40,20 @@ class SubCategoryTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SubCategoryCell", for: indexPath) as! SubCategoryTableViewCell
         let subCategory = subCategories?.subcategories?[indexPath.row]
+        var iconImage = subCategory?.iconImage
+        if iconImage == "" {
+            iconImage = "image/catalog/style/modile/icons-03.png"
+        }
         
         cell.subCategoryLabel.text = subCategory?.name
-        cell.subCategoryIV.sd_setImage(with: URL(string:"https://blackstarwear.ru/\(String( subCategory?.iconImage ?? "11"))"), completed: nil)
+        cell.subCategoryIV.sd_setImage(with: URL(string:"https://blackstarwear.ru/\(String(iconImage ?? "11"))"), completed: nil)
         cell.subCategoryIV.layer.masksToBounds = true
         cell.subCategoryIV.layer.cornerRadius = cell.subCategoryIV.frame.width / 2
 
         return cell
     }
 
+    // MARK: - Передача данных
    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
     if segue.identifier == "SubCategoryOnProduct" {
