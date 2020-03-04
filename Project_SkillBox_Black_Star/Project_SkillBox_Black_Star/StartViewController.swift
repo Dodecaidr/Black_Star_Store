@@ -10,8 +10,12 @@ import UIKit
 
 class StartViewController: UIViewController {
 
+    @IBOutlet weak var openButtom: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        openButtom.layer.masksToBounds = true
+        openButtom.layer.cornerRadius = openButtom.bounds.height / 2
     }
     
     override func viewWillAppear(_ animated: Bool) {
